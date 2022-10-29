@@ -1,0 +1,124 @@
+:root {
+  --main-bg-color: rgb(247, 247, 31);
+  --secondary-bg-color: rgb(22, 189, 86);
+  --secondary-blue-color: rgb(22, 122, 189);
+}
+
+.navbar {
+  width: 100%;
+  background-color: var(--main-bg-color);
+  height: 4rem;
+  display: grid;
+  place-content: center;
+}
+
+.link {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+}
+.profile {
+  display: flex;
+  color: white;
+}
+
+.list {
+  list-style: none;
+  background-color: var(--secondary-blue-color);
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.linkList {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  margin: 1rem;
+}
+
+.button {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 16px;
+}
+.smallButton {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 10px;
+  background-color: red;
+}
+
+.btnGreen {
+  background-color: var(--secondary-bg-color);
+}
+.btnBlue {
+  background-color: var(--secondary-blue-color);
+}
+
+.btnYellow {
+  background-color: var(--main-bg-color);
+  color: black;
+}
+
+.container {
+  margin: 0 1rem;
+}
+
+/* pagination */
+.flex_numbers {
+  display: flex;
+  list-style: none;
+}
+
+.page_numbers {
+  list-style: none;
+  background-color: #dddd;
+  border-right: 1px solid rgb(163, 158, 158);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.page_numbers:hover,
+.btn:hover {
+  background-color: white;
+}
+
+.page_numbers::selection {
+  background-color: white;
+}
+.is_active {
+  background-color: white;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--secondary-blue-color);
+  border: 1px solid rgb(163, 158, 158);
+}
+
+.repoDetails {
+  width: 100%;
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
