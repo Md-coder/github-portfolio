@@ -30,7 +30,7 @@ const Profile = ({ user, loading }) => {
         </div>
         <div style={{ textAlign: 'left' }}>
           <h1>{user.name}</h1>
-          <h3>{user.login}</h3>
+          <h2>{user.login}</h2>
           <p>{user.bio}</p>
           <p>
             <img

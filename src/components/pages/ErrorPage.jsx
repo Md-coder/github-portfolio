@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import spinner from '../assets/icons/spinner.gif';
 
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
-const ErrorPage = () => {
-  const [, setLoading] = useState(false);
+const DonaldTrump = () => {
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const githubFetch = async (text) => {
       setLoading(true);
@@ -19,15 +20,33 @@ const ErrorPage = () => {
       if (response.status === 404) {
         window.location = '/notFound';
       } else {
-        await response.json().of((data) => {
+        await response.json().then((data) => {
           setLoading(false);
           console.log(data);
         });
       }
     };
-    githubFetch('Md-coder');
+    throw new Error('Simulated Error');
   }, []);
-  return <></>;
+
+  if (loading) {
+    return (
+      <>
+        <div style={{ margin: 'auto' }}>
+          <img
+            title='loading'
+            src={spinner}
+            width='100'
+            height='100'
+            alt='spinner'
+            allowFullScreen
+            style={{ margin: 'auto' }}
+          />
+        </div>
+      </>
+    );
+  }
+  return <div></div>;
 };
 
-export default ErrorPage;
+export default DonaldTrump;

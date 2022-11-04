@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: rgb(247, 247, 31);
-  --secondary-bg-color: rgb(22, 189, 86);
+  --secondary-bg-color: rgb(1, 65, 25);
   --secondary-blue-color: rgb(22, 122, 189);
 }
 
@@ -64,7 +64,7 @@
   display: inline-block;
   margin-left: 1rem;
   font-size: 10px;
-  background-color: red;
+  background-color: rgb(94, 4, 4);
 }
 
 .btnGreen {

@@ -21,11 +21,10 @@ const Home = ({ setUrl }) => {
       });
 
       if (response.status === 404) {
-        console.log('cant find user');
+        window.location = '/notFound';
       } else {
         await response.json().then((data) => {
           setLoading(false);
-          console.log(data);
           setUser(data);
           setUrl(data.repos_url);
         });

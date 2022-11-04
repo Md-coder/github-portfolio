@@ -41,11 +41,10 @@ const Repositories = ({ url, handleUpdateSingleRepo }) => {
       });
 
       if (response.status === 404) {
-        console.log('cant find user');
+        window.location = '/notFound';
       } else {
         await response.json().then((data) => {
           setLoading(false);
-          console.log(data);
           setRepositories(data);
         });
       }

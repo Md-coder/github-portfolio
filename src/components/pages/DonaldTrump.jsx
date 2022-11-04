@@ -22,7 +22,6 @@ const DonaldTrump = () => {
       } else {
         await response.json().then((data) => {
           setLoading(false);
-          console.log(data);
         });
       }
     };

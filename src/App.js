@@ -3,12 +3,12 @@ import Nav from './components/Nav';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import { useState } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
 import Repositories from './components/pages/Repositories';
 import RepoDetails from './components/pages/RepoDetails';
 import NotFound from './components/pages/NotFound';
 import DonaldTrump from './components/pages/DonaldTrump';
-import ErrorPage from './components/pages/ErrorBoundary';
+import ErrorPage from './components/pages/ErrorPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   const [repoUrl, setRepoUrl] = useState('');
@@ -18,37 +18,32 @@ function App() {
     setSingleRepo(repo);
   };
 
-  const ErrorFallback = ({ error, resetErrorBoundary }) => {
-    return (
-      <div role='alert'>
-        <p>Something went wrong:</p>
-        <pre>{error.message}</pre>
-        <button onClick={resetErrorBoundary}>Try again</button>
-      </div>
-    );
-  };
-
   return (
     <div className='App'>
       <Router>
         <Nav />
         <div className='body'>
-          <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Routes>
-              <Route path='/' element={<Home setUrl={setRepoUrl} />} />
-              <Route path='/errorBoundary' element={<ErrorPage />} />
-              <Route path='/notFound' element={<NotFound />} />
-              <Route path='/donaldTrump' element={<DonaldTrump />} />
-              <Route
-                path='/repositories'
-                element={
-                  <Repositories url={repoUrl} handleUpdateSingleRepo={handleUpdateSingleRepo} />
-                }
-              >
-                <Route path='repoDetails' element={<RepoDetails singleRepo={singleRepo} />} />
-              </Route>
-            </Routes>
-          </ErrorBoundary>
+          <Routes>
+            <Route path='/' element={<Home setUrl={setRepoUrl} />} />
+            <Route
+              path='/errorBoundary'
+              element={
+                <ErrorBoundary>
+                  <ErrorPage />
+                </ErrorBoundary>
+              }
+            />
+            <Route path='/notFound' element={<NotFound />} />
+            <Route path='/donaldTrump' element={<DonaldTrump />} />
+            <Route
+              path='/repositories'
+              element={
+                <Repositories url={repoUrl} handleUpdateSingleRepo={handleUpdateSingleRepo} />
+              }
+            >
+              <Route path='repoDetails' element={<RepoDetails singleRepo={singleRepo} />} />
+            </Route>
+          </Routes>
         </div>
       </Router>
     </div>
