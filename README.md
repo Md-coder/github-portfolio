@@ -13,6 +13,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://github-portfolio-two.vercel.app/
 
+This is how it should look once token is provided.
+![Screenshot (173)](https://user-images.githubusercontent.com/56928830/200157600-854cb198-09db-41f9-bdb3-0480a4c7527d.png)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
