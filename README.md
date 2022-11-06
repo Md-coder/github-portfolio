@@ -7,11 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Install [node](https://nodejs.org/en/download/) using a node version manager like **[nvm](https://github.com/creationix/nvm#install-script)** or **[n](https://www.npmjs.com/package/n)**
 2. Clone this repo
 3. In this project's directory, run `npm install` to install dependencies
-4. # Duplicate the `.env.example` file as `.env` file and provide the required configurations. Use your Github token to replace the missing field.
+4. Duplicate the `.env.example` file as `.env` file and provide the required configurations. Use your Github token to replace the missing field.
 
 # Link to the app
 
 https://github-portfolio-two.vercel.app/
+
+This is how it should look once token is provided.
+![Screenshot (173)](https://user-images.githubusercontent.com/56928830/200157600-854cb198-09db-41f9-bdb3-0480a4c7527d.png)
+
 
 ## Available Scripts
 
