@@ -14,11 +14,7 @@ const Home = ({ setUrl }) => {
     const githubFetch = async (text) => {
       setLoading(true);
 
-      const response = await fetch(`${GITHUB_URL}/users/${text}`, {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      });
+      const response = await fetch(`${GITHUB_URL}/users/${text}`);
 
       if (response.status === 404) {
         window.location = '/notFound';
