@@ -29,16 +29,10 @@ const Repositories = ({ url, handleUpdateSingleRepo }) => {
     setPageNumber(number);
   };
 
-  const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
-
   useEffect(() => {
     const fetchRepositories = async () => {
       setLoading(true);
-      const response = await fetch(`${url}`, {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      });
+      const response = await fetch(`${url}`);
 
       if (response.status === 404) {
         window.location = '/notFound';

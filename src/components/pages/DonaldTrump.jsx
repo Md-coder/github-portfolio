@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import spinner from '../assets/icons/spinner.gif';
 
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 const DonaldTrump = () => {
   const [loading, setLoading] = useState(false);

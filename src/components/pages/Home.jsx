@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import Profile from '../Profile';
 
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 const Home = ({ setUrl }) => {
   const [loading, setLoading] = useState(false);
